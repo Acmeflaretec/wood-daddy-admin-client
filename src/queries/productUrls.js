@@ -12,11 +12,13 @@ const getProducts = async (data) => request(`/products?page=${data?.pageNo}&perp
 const getBanner = async (data) => request(`/banner`, 'GET', data)
 const getAdvertisement = async (data) => request(`/advertisement`, 'GET', data)
 const getWelcomeSection = async (data) => request(`/contentSection`, 'GET', data)
+const getOrders = async (data) => request(`/order`, 'GET', data)
 
 
 
 
 export {
+  getOrders,
   addCategory,
   addProduct,
   addBanner,

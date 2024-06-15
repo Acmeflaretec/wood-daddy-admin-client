@@ -10,6 +10,7 @@ import {
   addAdvertisement,
   addWelcomeSection,
   getWelcomeSection,
+  getOrders,
 
 
 } from "./productUrls";
@@ -37,6 +38,17 @@ const useGetCategory = (data) => {
     // refetchOnWindowFocus: false,
   });
 };
+//getOrders
+const useGetOrders = (data) =>{
+
+  return useQuery(["get_category", data], () => getOrders(data), {
+    staleTime: 3000,
+    keepPreviousData: true,
+    // refetchOnWindowFocus: false,
+  });
+
+}
+
 
 const useGetProducts = (data) => {
   return useQuery(["get_products", data], () => getProducts(data), {
@@ -138,7 +150,7 @@ export {
   useGetAdvertisement,
   useGetWelcomeSection,
   useAddWelcomeSection,
-
+  useGetOrders,
 
 
 };
